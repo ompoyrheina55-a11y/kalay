@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ============================== -->
+    <!-- CHANGE WEBSITE TITLE HERE      -->
+    <!-- ============================== -->
+    <title>Happy Birthday! 💜</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ============================== -->
+    <!-- 🔐 PASSWORD SCREEN             -->
+    <!-- ============================== -->
+    <div id="password-screen" class="screen active">
+      <div class="floating-deco" aria-hidden="true">
+        <span class="dino-deco">🦕</span>
+        <span class="heart-float">💜</span>
+        <span class="star-float">⭐</span>
+        <span class="heart-float">💜</span>
+        <span class="star-float">✨</span>
+        <span class="heart-float">💜</span>
+        <span class="star-float">🌸</span>
+        <span class="heart-float">💫</span>
+      </div>
+
+      <div class="password-card">
+        <div class="dino-top">🦕</div>
+        <h1 class="password-title">A little surprise awaits... 💜</h1>
+        <p class="password-subtitle">ang pass kay bday nmo (mmddyyyy) 💌</p>
+
+        <div class="lock-icon" id="lock-icon">🔐</div>
+
+        <div class="input-wrap" id="input-wrap">
+          <input
+            type="password"
+            id="password-input"
+            placeholder="Enter the secret password..."
+            autocomplete="off"
+            aria-label="Secret password"
+          />
+        </div>
+
+        <p class="error-msg" id="error-msg" aria-live="polite"></p>
+
+        <button class="btn-primary" id="unlock-btn" onclick="checkPassword()">
+          Unlock 💜
+        </button>
+
+        <p class="hint-text">Press Enter to unlock too ✨</p>
+      </div>
+    </div>
+
+    <!-- ============================== -->
+    <!-- 🎉 OPENING SCREEN              -->
+    <!-- ============================== -->
+    <div id="opening-screen" class="screen">
+      <div class="confetti-container" id="confetti-container"></div>
+
+      <div class="floating-deco" aria-hidden="true">
+        <span>💜</span><span>⭐</span><span>✨</span><span>🎈</span>
+        <span>💗</span><span>🌸</span><span>💫</span><span>🎀</span>
+      </div>
+
+      <div class="opening-card">
+        <div class="dino-bounce" aria-hidden="true">🦕</div>
+        <h1 class="opening-title">Happy Birthday <br />Kalay!! 💜🎂</h1>
+        <p class="opening-subtitle">
+          mao ni ako bday gift sa imoha, digital lang kay IT man ko <br />
+          AHAHHAHHAHAH
+        </p>
+
+        <div class="balloons" aria-hidden="true">
+          <span>🎈</span><span>🎈</span><span>🎈</span>
+        </div>
+
+        <button class="btn-primary btn-open" id="open-letter-btn" onclick="openLetter()">
+          Open Your letterrrrr 💌
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================== -->
+    <!-- 💌 MAIN CONTENT                -->
+    <!-- Order: Video → Photos → Surprise (letter inside) → Footer -->
+    <!-- ============================== -->
+    <div id="main-content" class="screen">
+      <!-- Floating ambient decorations -->
+      <div class="ambient" aria-hidden="true" id="ambient-hearts"></div>
+
+      <!-- ============================== -->
+      <!-- 1. 🎥 VIDEO SECTION            -->
+      <!-- ============================== -->
+      <section class="video-section reveal">
+        <div class="section-header">
+          <h2 class="section-title">Surprise!! 🎥</h2>
+          <p class="section-sub">happy bidi sa imong bday na natawhan</p>
+        </div>
+
+        <div class="video-frame">
+          <div class="video-deco" aria-hidden="true">💜 ✨ ⭐ 💗 🌸</div>
+          <!-- ============================== -->
+          <!-- REPLACE VIDEO FILE HERE        -->
+          <!-- Put your video in:             -->
+          <!-- videos/birthday-video.mp4      -->
+          <!-- ============================== -->
+          <video
+            id="birthday-video"
+            controls
+            preload="metadata"
+            aria-label="Birthday surprise video"
+          >
+            <source src="videos/birthday-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-deco" aria-hidden="true">🦕 💜 🎈 ✨ 💗</div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- 2. 📸 PHOTO MEMORIES           -->
+      <!-- ============================== -->
+      <section class="gallery-section reveal">
+        <div class="section-header">
+          <h2 class="section-title">IMONG MGA NAWNG 📸</h2>
+          <p class="section-sub">HAHAHAHAHAHAHAHAHAHAHAHAHH<br>charizzz</p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- ============================== -->
+          <!-- ADD / REMOVE PHOTOS HERE       -->
+          <!-- Change src="images/photoX.jpg" -->
+          <!-- Change the caption text too    -->
+          <!-- ============================== -->
+
+          <div class="polaroid reveal-child">
+            <div class="photo-wrap">
+              <img src="images/ph1.jpg" alt="Memory 1" loading="lazy" />
+            </div>
+            <!-- CHANGE CAPTION BELOW -->
+            <p class="caption">High School moments 💜</p>
+          </div>
+
+          <div class="polaroid reveal-child">
+            <div class="photo-wrap">
+              <img src="images/ph2.jpg" alt="Memory 2" loading="lazy" />
+            </div>
+            <!-- CHANGE CAPTION BELOW -->
+            <p class="caption">mga agaws ✨</p>
+          </div>
+
+          <div class="polaroid reveal-child">
+            <div class="photo-wrap">
+              <img src="images/ph3.jpg" alt="Memory 3" loading="lazy" />
+            </div>
+            <!-- CHANGE CAPTION BELOW -->
+            <p class="caption">Always together 🌸</p>
+          </div>
+ 
+           <div class="polaroid reveal-child">
+            <div class="photo-wrap">
+              <img src="images/ph4.jpg" alt="Memory 4" loading="lazy" />
+            </div>
+            <!-- CHANGE CAPTION BELOW -->
+            <p class="caption">kyutiii 💗</p>
+          </div>
+
+           <div class="polaroid reveal-child">
+            <div class="photo-wrap">
+              <img src="images/ph5.jpg" alt="Memory 5" loading="lazy" />
+            </div>
+            <!-- CHANGE CAPTION BELOW -->
+            <p class="caption">Best win in life!! 💜</p>
+          </div>
+
+           <div class="polaroid reveal-child">
+            <div class="photo-wrap">
+              <img src="images/ph6.jpg" alt="Memory 6" loading="lazy" />
+            </div>
+            <!-- CHANGE CAPTION BELOW -->
+            <p class="caption">mga senior moments ✨</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================== -->
+      <!-- 3. 🎁 SURPRISE SECTION         -->
+      <!-- (letter is hidden inside here) -->
+      <!-- ============================== -->
+      <section class="surprise-section reveal">
+        <div class="surprise-card">
+          <h2 class="surprise-title">One More Surprise... 🎁💜</h2>
+          <p class="surprise-hint">I saved the best for last 😊✨</p>
+          <button
+            class="btn-primary btn-surprise"
+            id="surprise-btn"
+            onclick="triggerSurprise()"
+          >
+            Click Me! 💜
+          </button>
+        </div>
+
+        <!-- Revealed when button is clicked: message + letter -->
+        <div class="surprise-message" id="surprise-message" aria-live="polite">
+
+          <!-- Short sweet message -->
+          <div class="surprise-msg-inner">
+            <div class="surprise-dino" aria-hidden="true">🦕🎂🦕</div>
+            <!-- ============================== -->
+            <!-- EDIT FINAL SURPRISE MESSAGE    -->
+            <!-- ============================== -->
+            <h3 class="surprise-msg-title">Happy Birthday! 🎉💜</h3>
+            <p class="surprise-msg-text">
+              Happy happy happy birthday kalaaayyyyy!! 
+              I know basin di ka ganahan ani na way pag suprise² kay di man ka IT HAHAHAHHAHA 
+              pero chuyins ra ani ah, kani nalang ako gibuhat kay IT man ko HAHAHAHHA 
+              btaw happy birthday sa imong adlaw na natawhan!! 
+              I hope u will enjoy ur day as much as u want to. 
+              I chose these pics diay kay it reminds me sa unsa nata ka dugay nag uban, since birth? charizz HAHAHAH 
+              pero btaw I'm glad and grateful that I met you, 
+              usahay lng gyd dli masabtan atung tagsa² ka mood pero sge lang pareha man tag heart yayyyy 
+              kay mga MARUPOK man ta HAHAHAHAHAHHA, pero btaw, 
+              I pray to God na He will guide us gyd sa atuang each ka mga future, 
+              may God lead us to the right man that he chose for us. 
+              Amping sad diay permi sa OJT nmo gurl, sanaol HAHAHAHAH. 
+              Btaw mao rana uy, pag amping kay wa ka ampingi HAHAAHAHA. 
+              Anyways Happy Birthday againnn!!! mao rani ako gift sa imoha huhuhu kapoy rabag AI raba ani HAHAHAHAHHAH 
+              btaw ako gift sa imo kay secretttt. Be excited nalang HAHAHAHHA byeerss!! 
+              God Bless always!! 💜✨🎂
+            </p>
+            <div class="surprise-icons" aria-hidden="true">💜 ✨ 🌸 ⭐ 💗 🎈 💜</div>
+          </div>
+        </div>
+        <!-- end #surprise-message -->
+      </section>
+
+      <!-- ---- FOOTER ---- -->
+      <footer class="footer reveal">
+        <div class="footer-deco" aria-hidden="true">💜 🌸 ✨ ⭐ 💗 🦕 💜 🌸 ✨</div>
+        <h2 class="footer-title">Happy Birthday Once Again! 💜🎂</h2>
+        <p class="footer-sub">With lots of love and warm wishes. <br> I love you so much!!💜</p>
+        <div class="footer-hearts" aria-hidden="true">💜 💗 💜 💗 💜</div>
+        <div class="footer-dino" aria-hidden="true">🦕</div>
+      </footer>
+    </div>
+    <!-- end #main-content -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
